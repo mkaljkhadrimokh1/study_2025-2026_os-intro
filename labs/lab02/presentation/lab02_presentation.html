@@ -1,0 +1,163 @@
+<hr />
+<h2 id="author">Author</h2>
+<p>author: name: Мохаммед Фуад Мохаммед Хамуд Аль-хадри degrees: BSc
+orcid: N/A email: <a
+href="mailto:1132255653@rudn.ru">1132255653@rudn.ru</a> affiliation: -
+name: Российский университет дружбы народов country: Российская
+Федерация postal-code: N/A city: Москва address: ул. Миклухо-Маклая,
+д.21 k1</p>
+<h2 id="title">Title</h2>
+<p>title: Первоначальная настройка Git subtitle: Лабораторная работа №2
+license: CC BY date: today date-format: “YYYY-MM-DD” ————————-</p>
+<h1 id="информация">Информация</h1>
+<h2 id="докладчик">Докладчик</h2>
+<ul>
+<li>Студент курса «Введение в операционные системы»</li>
+<li>Российский университет дружбы народов</li>
+<li>Факультет физико-математических и естественных наук</li>
+</ul>
+<hr />
+<h1 id="вводная-часть">Вводная часть</h1>
+<h2 id="актуальность">Актуальность</h2>
+<ul>
+<li>Системы контроля версий являются важным инструментом разработки
+программного обеспечения</li>
+<li>Они позволяют отслеживать изменения в проектах</li>
+<li>Упрощают совместную работу разработчиков</li>
+<li>Позволяют возвращаться к предыдущим версиям файлов</li>
+</ul>
+<hr />
+<h2 id="объект-и-предмет-исследования">Объект и предмет
+исследования</h2>
+<p><strong>Объект исследования</strong></p>
+<ul>
+<li>система контроля версий <strong>Git</strong></li>
+<li>сервис удалённых репозиториев <strong>GitHub</strong></li>
+</ul>
+<p><strong>Предмет исследования</strong></p>
+<ul>
+<li>настройка Git</li>
+<li>настройка безопасной аутентификации</li>
+<li>создание репозитория проекта</li>
+</ul>
+<hr />
+<h2 id="цели-и-задачи">Цели и задачи</h2>
+<p><strong>Цель работы</strong></p>
+<p>Изучить основы работы с системой контроля версий Git и выполнить её
+первоначальную настройку.</p>
+<p><strong>Задачи</strong></p>
+<ul>
+<li>установить Git</li>
+<li>выполнить базовую настройку</li>
+<li>создать SSH ключ</li>
+<li>создать PGP ключ</li>
+<li>настроить GitHub</li>
+<li>создать репозиторий курса</li>
+</ul>
+<hr />
+<h2 id="материалы-и-методы">Материалы и методы</h2>
+<p>В работе использовались:</p>
+<ul>
+<li>операционная система <strong>Fedora Linux</strong></li>
+<li>система контроля версий <strong>Git</strong></li>
+<li>сервис <strong>GitHub</strong></li>
+<li>инструмент <strong>GitHub CLI</strong></li>
+</ul>
+<p>Основные команды:</p>
+<ul>
+<li><code>git</code></li>
+<li><code>ssh-keygen</code></li>
+<li><code>gpg</code></li>
+<li><code>gh</code></li>
+</ul>
+<hr />
+<h1 id="выполнение-работы">Выполнение работы</h1>
+<h2 id="установка-git">Установка Git</h2>
+<p>Установка Git выполняется через менеджер пакетов.</p>
+<p>Команда:</p>
+<pre class="id=&quot;j9ylw1&quot;"><code>sudo dnf install git</code></pre>
+<p>Также была установлена утилита GitHub CLI:</p>
+<pre class="id=&quot;5v0o8s&quot;"><code>sudo dnf install gh</code></pre>
+<hr />
+<h2 id="базовая-настройка-git">Базовая настройка Git</h2>
+<p>Настройка имени пользователя:</p>
+<pre class="id=&quot;0grb91&quot;"><code>git config --global user.name &quot;Name Surname&quot;</code></pre>
+<p>Настройка email:</p>
+<pre class="id=&quot;t1shns&quot;"><code>git config --global user.email &quot;email@example.com&quot;</code></pre>
+<p>Просмотр конфигурации:</p>
+<pre class="id=&quot;jfh87c&quot;"><code>git config --list</code></pre>
+<hr />
+<h2 id="создание-ssh-ключа">Создание SSH ключа</h2>
+<p>SSH-ключ используется для безопасного подключения к GitHub.</p>
+<p>Создание ключа:</p>
+<pre class="id=&quot;rsd4y3&quot;"><code>ssh-keygen -t ed25519</code></pre>
+<p>Просмотр ключа:</p>
+<pre class="id=&quot;3qihio&quot;"><code>cat ~/.ssh/id_ed25519.pub</code></pre>
+<hr />
+<h2 id="добавление-ssh-ключа-в-github">Добавление SSH ключа в
+GitHub</h2>
+<p>Публичный ключ добавляется в настройки GitHub.</p>
+<p>Основные шаги:</p>
+<ol type="1">
+<li>открыть <strong>Settings</strong></li>
+<li>перейти в <strong>SSH and GPG keys</strong></li>
+<li>добавить новый ключ</li>
+</ol>
+<hr />
+<h2 id="создание-pgp-ключа">Создание PGP ключа</h2>
+<p>PGP используется для подписи коммитов.</p>
+<p>Создание ключа:</p>
+<pre class="id=&quot;v44d6s&quot;"><code>gpg --full-generate-key</code></pre>
+<p>Просмотр ключей:</p>
+<pre class="id=&quot;93sz3m&quot;"><code>gpg --list-secret-keys --keyid-format LONG</code></pre>
+<hr />
+<h2 id="добавление-pgp-ключа-в-github">Добавление PGP ключа в
+GitHub</h2>
+<p>Экспорт ключа:</p>
+<pre class="id=&quot;thldk1&quot;"><code>gpg --armor --export &lt;PGP Fingerprint&gt;</code></pre>
+<p>После этого ключ добавляется в раздел:</p>
+<p><strong>GitHub → Settings → GPG Keys</strong></p>
+<hr />
+<h2 id="настройка-подписи-коммитов">Настройка подписи коммитов</h2>
+<p>Настройка Git для подписи коммитов:</p>
+<pre class="id=&quot;4p5c5n&quot;"><code>git config --global user.signingkey &lt;PGP Fingerprint&gt;</code></pre>
+<pre class="id=&quot;s15t4g&quot;"><code>git config --global commit.gpgsign true</code></pre>
+<p>После этого каждый коммит автоматически подписывается.</p>
+<hr />
+<h2 id="настройка-github-cli">Настройка GitHub CLI</h2>
+<p>Авторизация в GitHub CLI выполняется командой:</p>
+<pre class="id=&quot;x9ut6c&quot;"><code>gh auth login</code></pre>
+<p>После выполнения команды происходит вход через браузер.</p>
+<hr />
+<h2 id="создание-репозитория-курса">Создание репозитория курса</h2>
+<p>Создание репозитория через GitHub CLI:</p>
+<pre class="id=&quot;z0d8h5&quot;"><code>gh repo create study_2024-2025_os-intro</code></pre>
+<p>Клонирование репозитория:</p>
+<pre class="id=&quot;rd06zc&quot;"><code>git clone git@github.com:&lt;username&gt;/study_2024-2025_os-intro.git</code></pre>
+<hr />
+<h1 id="результаты">Результаты</h1>
+<h2 id="полученные-результаты">Полученные результаты</h2>
+<p>В ходе лабораторной работы:</p>
+<ul>
+<li>установлен Git</li>
+<li>выполнена базовая настройка</li>
+<li>создан SSH ключ</li>
+<li>создан PGP ключ</li>
+<li>настроен GitHub</li>
+<li>создан репозиторий курса</li>
+</ul>
+<hr />
+<h1 id="итог">Итог</h1>
+<h2 id="выводы">Выводы</h2>
+<p>В ходе выполнения лабораторной работы были изучены основы работы с
+системой контроля версий Git.</p>
+<p>Были освоены навыки:</p>
+<ul>
+<li>настройки Git</li>
+<li>создания SSH ключей</li>
+<li>создания PGP ключей</li>
+<li>работы с GitHub</li>
+<li>создания и управления репозиториями</li>
+</ul>
+<p>Система Git является важным инструментом для разработки программного
+обеспечения и совместной работы над проектами.</p>
