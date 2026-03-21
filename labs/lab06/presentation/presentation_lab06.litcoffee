@@ -1,6 +1,5 @@
-
 # Слайд 1 — Титульный
-Лабораторная работа  
+pandoc file.md -o slides.html -t revealjs --standalone --resource-path=.Лабораторная работа  
 Работа с командной строкой Unix/Linux  
 
 ---
@@ -8,9 +7,7 @@
 author:
   name: [Аль-хадри Мохаммед Фуад Мохаммед Хамуд]
   email: [113225565@rudn.ru]
-
-```
-Title
+---
 title: Работа с командной строкой Unix/Linux
 subtitle: Лабораторная работа
 date: "2026-03-21"
